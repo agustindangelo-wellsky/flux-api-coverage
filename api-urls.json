@@ -1,58 +1,72 @@
 [
   {
-    "api": "WST.Scheduler.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.scheduler/docs/1.0/swagger.json"
+    "name": "WST.Scheduler.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.scheduler/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WST.Scheduler.API.git"
   },
   {
-    "api": "WST.AntibodyTesting.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.antibodytesting/docs/1.0/swagger.json"
+    "name": "WST.AntibodyTesting.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.antibodytesting/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WST.AntibodyTesting.API.git"
   },
   {
-    "api": "WST.Patient.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.patient/docs/1.0/swagger.json"
+    "name": "WST.Patient.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.patient/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WST.Patient.API.git"
   },
   {
-    "api": "WST.AntigenTesting.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.antigentesting/docs/1.0/swagger.json"
+    "name": "WST.AntigenTesting.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.antigentesting/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WST.AntigenTesting.API.git"
   },
   {
-    "api": "WST.Inventory.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.inventory/docs/1.0/swagger.json"
+    "name": "WST.Inventory.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.inventory/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WST.Inventory.API.git"
   },
   {
-    "api": "WST.BloodTrack.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.bloodtrack/docs/1.0/swagger.json"
+    "name": "WST.BloodTrack.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.bloodtrack/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WST.BloodTrack.API.git"
   },
   {
-    "api": "WST.Orders.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.orders/docs/1.0/swagger.json"
+    "name": "WST.Orders.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.orders/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WST.Orders.API.git"
   },
   {
-    "api": "WST.Administration.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.administration/docs/1.0/swagger.json"
+    "name": "WST.Administration.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.administration/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WST.Administration.API.git"
   },
   {
-    "api": "WST.Interface.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.interface/docs/1.0/swagger.json"
+    "name": "WST.Interface.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.interface/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WST.Interface.API.git"
   },
   {
-    "api": "WST.Home.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.home/docs/1.0/swagger.json"
+    "name": "WST.Home.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.home/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WST.Home.API.git"
   },
   {
-    "api": "WSB.TenantProfileService.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.tenantprofile/docs/1.0/swagger.json"
+    "name": "WSB.TenantProfileService",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.tenantprofile/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WSB.TenantProfileService.git"
   },
   {
-    "api": "WSB.Auditing.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.auditing/docs/1.0/swagger.json"
+    "name": "WSB.Auditing.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.auditing/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WSB.Auditing.API.git"
   },
   {
-    "api": "WS.Barcode.ISBTService",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/ws.barcode/docs/1.0/swagger.json"
+    "name": "WS.Barcode.ISBTService",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/ws.barcode/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WS.Barcode.ISBTService.git"
   },
   {
-    "api": "ProcessMigration.API",
-    "apiSpecificationUrl": "https://bmtfnq22app01.wellsky.com/wst.processmigration/docs/1.0/swagger.json"
+    "name": "ProcessMigration.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.processmigration/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.ProcessMigration.API.git"
   }
 ]

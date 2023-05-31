@@ -1,5 +1,3 @@
-api-specs
-Flux.*/
-main.csx
-omnisharp.json
-.vscode
+api-specs/*
+flux-projects/*
+.venv/
