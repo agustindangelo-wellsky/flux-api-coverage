@@ -1,0 +1,281 @@
+
+    ---------------------------------- Flux.WST.Scheduler.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 75.0%
+
+    Endpoints Covered:
+    
+            put /api/v1/authcredentials 
+                    (exercised by 7 tests)
+            
+            get /api/v1/authcredentials/{credentialid} 
+                    (exercised by 4 tests)
+            
+            post /api/v1/job/apijob 
+                    (exercised by 5 tests)
+            
+    ---------------------------------- Flux.WST.AntibodyTesting.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 40.0%
+
+    Endpoints Covered:
+    
+            get /api/v1/sites/{sitecode}/worksheet/instrumentnumbers 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/worksheet/getinstrumenttests 
+                    (exercised by 1 tests)
+            
+            get /api/v1/sites/{sitecode}/worksheet/interpretations 
+                    (exercised by 2 tests)
+            
+            get /api/v1/sites/{sitecode}/worksheet/overridereasons 
+                    (exercised by 4 tests)
+            
+            get /api/v1/sites/{sitecode}/worksheet/patienttestcodes/{internalpatientnumber} 
+                    (exercised by 5 tests)
+            
+            get /api/v1/sites/{sitecode}/worksheet/testcodes 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/worksheet/commentcells/{internaltestcode} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/sites/{sitecode}/worksheet/gettestfamilyconfiguration 
+                    (exercised by 3 tests)
+            
+    ---------------------------------- Flux.WST.Patient.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 24.5%
+
+    Endpoints Covered:
+    
+            get /api/v1/sites/{sitecode}/patient/antibodiesscreen 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/antibodies 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/antigens 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/bloodtypes 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/doesmrnexist/{mrn} 
+                    (exercised by 1 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/instructions 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/patient/{internalpatientnumber} 
+                    (exercised by 1 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/getpatientmedicalrecord/{mrn} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/patientsearch 
+                    (exercised by 1 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/sources 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/reactions 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/sextypes 
+                    (exercised by 3 tests)
+            
+            post /api/v1/sites/{sitecode}/patient/save 
+                    (exercised by 1 tests)
+            
+    ---------------------------------- Flux.WST.AntigenTesting.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 21.2%
+
+    Endpoints Covered:
+    
+            post /api/v1/sites/{sitecode}/antigentesting/completecontrolworksheet 
+                    (exercised by 4 tests)
+            
+            post /api/v1/sites/{sitecode}/antigentesting/completetestingworksheet 
+                    (exercised by 2 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getcontrolworksheet/{controlworksheetid} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/gettestingworksheet/{worksheetid} 
+                    (exercised by 8 tests)
+            
+            post /api/v1/sites/{sitecode}/antigentesting/savecontrolworksheet 
+                    (exercised by 2 tests)
+            
+            post /api/v1/sites/{sitecode}/antigentesting/savetestingworksheet 
+                    (exercised by 4 tests)
+            
+            post /api/v1/sites/{sitecode}/antigentesting/validategradedreactions 
+                    (exercised by 25 tests)
+            
+    ---------------------------------- Flux.WST.Inventory.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 16.4%
+
+    Endpoints Covered:
+    
+            patch /api/v1/facilities/{facilitycode}/product-type/{producttype}/dereserve/{numberofdays} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/{facilitycode}/batches 
+                    (exercised by 3 tests)
+            
+            get /api/v1/{facilitycode}/batches/{batchid}/units 
+                    (exercised by 4 tests)
+            
+            get /api/v1/device/virtualidentifiers/facilities/{facility} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/issuelocations/facilities/{facility} 
+                    (exercised by 3 tests)
+            
+            get /api/v1/units/facilities/{facility}/units/{donationid}/productcodes/{productcode}/antibodies 
+                    (exercised by 3 tests)
+            
+            get /api/v1/units/facilities/{facility}/units/{donationid}/productcodes/{productcode}/antigens 
+                    (exercised by 3 tests)
+            
+            get /api/v1/units/facilities/{facility}/units/{donationid}/productcodes/{productcode}/attributes 
+                    (exercised by 3 tests)
+            
+            get /api/v1/units/facilities/{facility}/units/{donationid}/productcodes/{productcode} 
+                    (exercised by 6 tests)
+            
+            post /api/v1/product/facilities/{facility}/addissueunittorequest 
+                    (exercised by 2 tests)
+            
+            put /api/v1/device/virtualidentifiers/facilities/{facility}/devices/{device}/identifiers/{identifier} 
+                    (exercised by 3 tests)
+            
+    ---------------------------------- Flux.WST.BloodTrack.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 9.1%
+
+    Endpoints Covered:
+    
+            get /api/v1/reservestock/v6/facilities/{facilitycode} 
+                    (exercised by 3 tests)
+            
+            get /api/v1/stockupdate/v4/facilities/{facilitycode} 
+                    (exercised by 3 tests)
+            
+    ---------------------------------- Flux.WST.Orders.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 8.1%
+
+    Endpoints Covered:
+    
+            get /api/v1/sites/{sitecode}/issue/getissuelocations 
+                    (exercised by 2 tests)
+            
+            get /api/v1/sites/{sitecode}/order/clinicians 
+                    (exercised by 2 tests)
+            
+            post /api/v1/sites/{sitecode}/safetycheck/evaluatesafetychecks 
+                    (exercised by 46 tests)
+            
+    ---------------------------------- Flux.WST.Administration.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 6.2%
+
+    Endpoints Covered:
+    
+            get /api/v1/usermanagement/getuser 
+                    (exercised by 4 tests)
+            
+    ---------------------------------- Flux.WST.Interface.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 100.0%
+
+    Endpoints Covered:
+    
+            post /api/v1/inboundmessage/sendtestresults 
+                    (exercised by 1 tests)
+            
+    ---------------------------------- Flux.WST.Home.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 20.0%
+
+    Endpoints Covered:
+    
+            get /api/v1/applications/all 
+                    (exercised by 2 tests)
+            
+            get /api/v1/sidenavlinks/sidenavigationsettings 
+                    (exercised by 2 tests)
+            
+    ---------------------------------- Flux.WSB.TenantProfileService / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 75.0%
+
+    Endpoints Covered:
+    
+            get /api/v1/sites/{sitecode}/facilitysettings/ 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/facilitysettings/getdefaultvalue/{category} 
+                    (exercised by 3 tests)
+            
+            get /api/v1/tenantsites/gettestsites 
+                    (exercised by 2 tests)
+            
+            get /api/v1/tenantsites/sites/{sitecode}/subscribingfacilities/ 
+                    (exercised by 3 tests)
+            
+            get /api/v1/tenantsites/gettenantsites/ 
+                    (exercised by 2 tests)
+            
+            get /api/v1/tenantsites/gettestfamiliestenantsites/ 
+                    (exercised by 2 tests)
+            
+    ---------------------------------- Flux.WSB.Auditing.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 16.7%
+
+    Endpoints Covered:
+    
+            post /api/v1/auditpatientview/sites/{sitecode}/insertviewauditlog 
+                    (exercised by 4 tests)
+            
+            get /api/v1/authenticationlogging/sites/{sitecode}/startauthenticationlogging 
+                    (exercised by 3 tests)
+            
+    ---------------------------------- Flux.WS.Barcode.ISBTService / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 50.0%
+
+    Endpoints Covered:
+    
+            get /api/v1/isbtbarcode/collectiondatetime/{collectiondatetime} 
+                    (exercised by 5 tests)
+            
+            get /api/v1/isbtbarcode/sites/{sitecode}/specialattributes/{specialtestingcode} 
+                    (exercised by 5 tests)
+            
+            post /api/v1/isbtbarcode/sites/{sitecode}/listdetails 
+                    (exercised by 3 tests)
+            
+            post /api/v1/isbtbarcode/bloodtype 
+                    (exercised by 9 tests)
+            
+            post /api/v1/isbtbarcode/din 
+                    (exercised by 5 tests)
+            
+            post /api/v1/isbtbarcode/expirationdatetimeplus 
+                    (exercised by 9 tests)
+            
+            post /api/v1/isbtbarcode/productcode 
+                    (exercised by 8 tests)
+            
+            post /api/v1/safetycheck/sites/{sitecode}/evaluatesafetychecks 
+                    (exercised by 45 tests)
+            
+    ---------------------------------- Flux.ProcessMigration.API / 05/31/23 ----------------------------------
+    Endpoints Coverage Percentage: 42.9%
+
+    Endpoints Covered:
+    
+            post /api/v1/processhl7adtinboundmessage 
+                    (exercised by 4 tests)
+            
+            post /api/v1/processinstrumentinboundmessage 
+                    (exercised by 4 tests)
+            
+            post /api/v1/processhl7orminboundmessage 
+                    (exercised by 3 tests)
+            
