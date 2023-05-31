@@ -8,17 +8,19 @@ if not os.path.exists('api-urls.json'):
 
 f = open(f'api-urls.json', encoding='UTF-8')
 apiurls = json.load(f)
+api_specs_base_path = './api-specs'
 
-if not os.path.exists('./api-specs'):
-    os.mkdir('./api-specs')
+if not os.path.exists(api_specs_base_path):
+    os.mkdir(api_specs_base_path)
 
 for apiurl in apiurls:
-    url = apiurl['apiSpecificationUrl']
-    project = apiurl['api']
+    url = apiurl['specUrl']
+    project = apiurl['name']
 
+    print(f'--> Retrieving {project} OpenAPI specification...')
     resp = requests.get(url)
     data = resp.json()
-    with open(f'./api-specs/{project}.json', 'w', encoding='UTF-8') as outfile:
+    with open(os.path.join(api_specs_base_path, f'{project}.json'), 'w', encoding='UTF-8') as outfile:
         json.dump(data, outfile)
 
-print('--> API Specification files were saved in ./temp/')
+print(f'--> API Specification files have been saved in {api_specs_base_path}')
