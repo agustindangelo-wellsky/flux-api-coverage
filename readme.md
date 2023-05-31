@@ -2,9 +2,9 @@
 
 Steps:
 
-1. Install python
-2. On powershell, create a Python virtual environment: `python -m venv .venv`
-3. Activate the virtual environment in the current shell: `.\.venv\Scripts\activate`
+1. Install python and git
+2. Make sure python is installed by running `python --version`. If this command throws an error, you may need to add your python to your PATH.
+3. Make sure git is installed by running `git --version`. If this command throws an error, you may need to add your git to your PATH. 
 4. Install Python dependencies: `pip install -r requirements.txt`
 
 Execute the scripts in the following order:
