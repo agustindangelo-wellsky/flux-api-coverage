@@ -60,7 +60,7 @@ def get_api_endpoints_and_operations_from_swagger_data(swagger_data):
     return api_endpoints, api_operations
 
 
-def print_report(api_endpoints, flux_api_calls):
+def generate_report(api_endpoints, flux_api_calls, report_lines):
     exercised_endpoints = 0
     total_of_api_endpoints = len(api_endpoints)
 
@@ -68,18 +68,19 @@ def print_report(api_endpoints, flux_api_calls):
         if flux_api_calls[endpoint]["count"] > 0:
             exercised_endpoints += 1
 
-    print(
-        f'---------------------------------- {flux_project_name} ----------------------------------')
-    print(
-        f'Endpoints Coverage Percentage: {round((exercised_endpoints / total_of_api_endpoints * 100), 1)}%')
-    print('')
-    print(f'Endpoints Covered At {datetime.datetime.now().strftime("%x")}:')
+    report_lines += f"""
+    ---------------------------------- {flux_project_name} / {datetime.datetime.now().strftime("%x")} ----------------------------------
+    Endpoints Coverage Percentage: {round((exercised_endpoints / total_of_api_endpoints * 100), 1)}%
+
+    Endpoints Covered:
+    """
     for endpoint in flux_api_calls:
         if flux_api_calls[endpoint]["count"] > 0:
-            print(f'  {flux_api_calls[endpoint]["operation"]} {endpoint} ')
-            print(
-                f'    (exercised by {flux_api_calls[endpoint]["count"]} tests)')
-
+            report_lines += f"""
+            {flux_api_calls[endpoint]["operation"]} {endpoint} 
+                    (exercised by {flux_api_calls[endpoint]["count"]} tests)
+            """
+    return report_lines
 
 def get_flux_api_methods_and_interfaces(interfaces_file_paths):
     interfaces = []
@@ -107,6 +108,7 @@ def read_api_specification(api_specifications_base, api_name):
 if __name__ == '__main__':
     flux_projects_base = './flux-projects'
     api_specifications_base = './api-specs'
+    report_lines = "";
 
     if not os.path.exists(flux_projects_base):
         print(
@@ -184,4 +186,9 @@ if __name__ == '__main__':
                 'count': method_counts[flux_api_methods[i]],
             }
 
-        print_report(api_endpoints, flux_api_calls)
+        report_lines = generate_report(api_endpoints, flux_api_calls, report_lines)
+
+    print(report_lines)
+    with open('coverage-report.txt', 'w', encoding='UTF-8') as report_file:
+        report_file.write(report_lines)
+    print('--> Coverage report has been saved in coverage-report.txt')
