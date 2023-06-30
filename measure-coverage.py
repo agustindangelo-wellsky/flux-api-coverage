@@ -40,7 +40,7 @@ def get_endpoints_calls_from_flux_project(interfaces):
 
     for interface in interfaces:
         flux_operations.append(
-            re.search('\[Get|\[Post|\[Patch|\[Put', interface).group(0)[1:].lower())
+            re.search('\[Get|\[Post|\[Patch|\[Put|\[Delete', interface).group(0)[1:].lower())
         flux_paths.append(re.search('(?<=\").*(?=\")',
                           interface).group(0).lower())
 
