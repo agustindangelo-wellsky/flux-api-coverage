@@ -68,5 +68,10 @@
     "name": "ProcessMigration.API",
     "specUrl": "https://bmtfnq22app01.wellsky.com/wst.processmigration/docs/1.0/swagger.json",
     "projectUrl": "https://github.com/mediwareinc/Flux.ProcessMigration.API.git"
-  }
+  },
+  {
+    "name": "WST.TestFamilies.API",
+    "specUrl": "https://bmtfnq22app01.wellsky.com/wst.testfamilies/docs/1.0/swagger.json",
+    "projectUrl": "https://github.com/mediwareinc/Flux.WST.TestFamilies.API.git"
+  }  
 ]
