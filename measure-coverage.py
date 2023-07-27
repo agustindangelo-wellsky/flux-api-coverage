@@ -54,15 +54,15 @@ def get_api_endpoints_and_operations_from_swagger_data(swagger_data):
     for path in swagger_data['paths']:
         lowercased_path = path.lower()
         if lowercased_path != '/' and 'servicediagnostics' not in lowercased_path:
-            api_endpoints.append(path.lower())
-            api_operations.append(list(swagger_data['paths'][path].keys())[0])
-
+            for operation in swagger_data['paths'][path]:
+                api_endpoints.append(path.lower())
+                api_operations.append(operation)
     return api_endpoints, api_operations
 
 
 def generate_report(api_endpoints, flux_api_calls, report_lines):
     exercised_endpoints = 0
-    total_of_api_endpoints = len(api_endpoints)
+    total_of_api_endpoints_operations = len(api_endpoints)
 
     for endpoint in flux_api_calls:
         if flux_api_calls[endpoint]["count"] > 0:
@@ -70,16 +70,27 @@ def generate_report(api_endpoints, flux_api_calls, report_lines):
 
     report_lines += f"""
     ---------------------------------- {flux_project_name} / {datetime.datetime.now().strftime("%x")} ----------------------------------
-    Endpoints Coverage Percentage: {round((exercised_endpoints / total_of_api_endpoints * 100), 1)}%
+    Endpoints-Operations In API: {total_of_api_endpoints_operations}
+    Endpoints-Operations Exercised By Tests: {exercised_endpoints}
+    Coverage Percentage: {round((exercised_endpoints / total_of_api_endpoints_operations * 100), 1)}%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     """
     for endpoint in flux_api_calls:
         if flux_api_calls[endpoint]["count"] > 0:
             report_lines += f"""
-            {flux_api_calls[endpoint]["operation"]} {endpoint} 
+            {endpoint} 
                     (exercised by {flux_api_calls[endpoint]["count"]} tests)
             """
+
+    
+    report_lines += f"""
+    Endpoints-Operations Not Covered:"""
+    for endpoint in api_endpoints:
+        if endpoint not in flux_api_calls:
+            report_lines += f"""
+            {endpoint}
+            """ 
     return report_lines
 
 def get_flux_api_methods_and_interfaces(interfaces_file_paths):
@@ -178,15 +189,20 @@ if __name__ == '__main__':
         endpoints_on_flux_project, endpoint_operations_on_flux_project = get_endpoints_calls_from_flux_project(
             interfaces)
         flux_api_calls = {}
+        api_endpoints_operations = []
 
         for i, endpoint in enumerate(endpoints_on_flux_project):
-            flux_api_calls[endpoint] = {
-                'operation': endpoint_operations_on_flux_project[i],
+            operation_endpoint = f"{endpoint_operations_on_flux_project[i]} {endpoint}"
+            flux_api_calls[operation_endpoint] = {
                 'method': flux_api_methods[i],
                 'count': method_counts[flux_api_methods[i]],
             }
 
-        report_lines = generate_report(api_endpoints, flux_api_calls, report_lines)
+        for i in range(len(api_endpoints)):
+            operation_endpoint = f"{api_operations[i]} {api_endpoints[i]}"
+            api_endpoints_operations.append(operation_endpoint)
+
+        report_lines = generate_report(api_endpoints_operations, flux_api_calls, report_lines)
 
     print(report_lines)
     with open('coverage-report.txt', 'w', encoding='UTF-8') as report_file:
