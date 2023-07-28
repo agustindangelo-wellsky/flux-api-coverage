@@ -208,7 +208,6 @@ if __name__ == '__main__':
             api_endpoint = api_endpoint.replace('{facilitycode}', '{sitecode}')
             operation_endpoint = f"{api_operations[i]} {api_endpoint}"
             api_endpoints_operations.append(operation_endpoint)
-            print(operation_endpoint)
 
         report_lines = generate_report(api_endpoints_operations, flux_api_calls, report_lines)
 
