@@ -89,8 +89,7 @@ def generate_report(api_endpoints, flux_api_calls, report_lines):
     for endpoint in api_endpoints:
         if endpoint not in flux_api_calls:
             report_lines += f"""
-            {endpoint}
-            """ 
+            {endpoint}""" 
     return report_lines
 
 def get_flux_api_methods_and_interfaces(interfaces_file_paths):
@@ -188,10 +187,15 @@ if __name__ == '__main__':
 
         endpoints_on_flux_project, endpoint_operations_on_flux_project = get_endpoints_calls_from_flux_project(
             interfaces)
+
         flux_api_calls = {}
         api_endpoints_operations = []
 
         for i, endpoint in enumerate(endpoints_on_flux_project):
+            # if '{facility}' in endpoint:
+
+            endpoint = endpoint.replace('{facility}', '{sitecode}')
+            endpoint = endpoint.replace('{facilitycode}', '{sitecode}')
             operation_endpoint = f"{endpoint_operations_on_flux_project[i]} {endpoint}"
             flux_api_calls[operation_endpoint] = {
                 'method': flux_api_methods[i],
@@ -199,7 +203,10 @@ if __name__ == '__main__':
             }
 
         for i in range(len(api_endpoints)):
-            operation_endpoint = f"{api_operations[i]} {api_endpoints[i]}"
+            api_endpoint = api_endpoints[i]
+            api_endpoint = api_endpoint.replace('{facility}', '{sitecode}')
+            api_endpoint = api_endpoint.replace('{facilitycode}', '{sitecode}')
+            operation_endpoint = f"{api_operations[i]} {api_endpoint}"
             api_endpoints_operations.append(operation_endpoint)
 
         report_lines = generate_report(api_endpoints_operations, flux_api_calls, report_lines)
