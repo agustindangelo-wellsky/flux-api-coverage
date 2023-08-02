@@ -83,7 +83,6 @@ def generate_report(api_endpoints, flux_api_calls, report_lines):
                     (exercised by {flux_api_calls[endpoint]["count"]} tests)
             """
 
-    
     report_lines += f"""
     Endpoints-Operations Not Covered:"""
     for endpoint in api_endpoints:
@@ -196,6 +195,7 @@ if __name__ == '__main__':
 
             endpoint = endpoint.replace('{facility}', '{sitecode}')
             endpoint = endpoint.replace('{facilitycode}', '{sitecode}')
+            endpoint = endpoint.rstrip('/')
             operation_endpoint = f"{endpoint_operations_on_flux_project[i]} {endpoint}"
             flux_api_calls[operation_endpoint] = {
                 'method': flux_api_methods[i],
@@ -206,6 +206,7 @@ if __name__ == '__main__':
             api_endpoint = api_endpoints[i]
             api_endpoint = api_endpoint.replace('{facility}', '{sitecode}')
             api_endpoint = api_endpoint.replace('{facilitycode}', '{sitecode}')
+            api_endpoint = api_endpoint.rstrip('/')
             operation_endpoint = f"{api_operations[i]} {api_endpoint}"
             api_endpoints_operations.append(operation_endpoint)
 
