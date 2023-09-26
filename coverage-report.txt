@@ -1,11 +1,13 @@
 
-    ---------------------------------- Flux.WST.Scheduler.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 75.0%
+    ---------------------------------- Flux.WST.Scheduler.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 5
+    Endpoints-Operations Exercised By Tests: 4
+    Coverage Percentage: 80.0%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
-            put /api/v1/authcredentials 
-                    (exercised by 7 tests)
+            post /api/v1/authcredentials 
+                    (exercised by 11 tests)
             
             get /api/v1/authcredentials/{credentialid} 
                     (exercised by 4 tests)
@@ -13,12 +15,22 @@
             post /api/v1/job/apijob 
                     (exercised by 5 tests)
             
-    ---------------------------------- Flux.WST.AntibodyTesting.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 40.0%
+            put /api/v1/authcredentials 
+                    (exercised by 7 tests)
+            
+    Endpoints-Operations Not Covered:
+            post /api/v1/job/scheduleptbatchjob
+    ---------------------------------- Flux.WST.AntibodyTesting.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 20
+    Endpoints-Operations Exercised By Tests: 11
+    Coverage Percentage: 55.0%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
             get /api/v1/sites/{sitecode}/worksheet/instrumentnumbers 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/worksheet/getinstrumenttestsavailability 
                     (exercised by 3 tests)
             
             get /api/v1/sites/{sitecode}/worksheet/getinstrumenttests 
@@ -33,6 +45,12 @@
             get /api/v1/sites/{sitecode}/worksheet/patienttestcodes/{internalpatientnumber} 
                     (exercised by 5 tests)
             
+            get /api/v1/sites/{sitecode}/worksheet/qcsetnumbers 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/worksheet/searchforworksheets 
+                    (exercised by 3 tests)
+            
             get /api/v1/sites/{sitecode}/worksheet/testcodes 
                     (exercised by 3 tests)
             
@@ -42,11 +60,26 @@
             get /api/v1/sites/{sitecode}/worksheet/gettestfamilyconfiguration 
                     (exercised by 3 tests)
             
-    ---------------------------------- Flux.WST.Patient.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 24.5%
+    Endpoints-Operations Not Covered:
+            post /api/v1/sites/{sitecode}/worksheet/saveantibodypanelworksheet
+            post /api/v1/sites/{sitecode}/worksheet/completeantibodypanelworksheet
+            post /api/v1/sites/{sitecode}/worksheet/savecompleteworksheetchanges
+            get /api/v1/sites/{sitecode}/worksheet/getantibodypanelworksheet/{worksheetid}
+            post /api/v1/sites/{sitecode}/worksheet/antigenantibodymistmatchexceptions/{internalpatientnumber}
+            delete /api/v1/sites/{sitecode}/worksheet/deleteworksheet/{worksheetid}
+            get /api/v1/sites/{sitecode}/worksheet/getantibodypanelcomments/{internaltestnumber}
+            post /api/v1/sites/{sitecode}/worksheet/invalidateantibodypaneltesting
+            get /api/v1/sites/{sitecode}/worksheet/getinstrumentantibodypaneltesting/{internaltestnumber}
+    ---------------------------------- Flux.WST.Patient.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 73
+    Endpoints-Operations Exercised By Tests: 44
+    Coverage Percentage: 60.3%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
+            get /api/v1/sites/{sitecode}/patient/admissiontypes 
+                    (exercised by 3 tests)
+            
             get /api/v1/sites/{sitecode}/patient/antibodiesscreen 
                     (exercised by 3 tests)
             
@@ -59,17 +92,80 @@
             get /api/v1/sites/{sitecode}/patient/bloodtypes 
                     (exercised by 3 tests)
             
+            get /api/v1/sites/{sitecode}/demographicreview/getdemographicsreviewflag 
+                    (exercised by 12 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/filemaintence/diagnoses 
+                    (exercised by 5 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/doesarmbandexist/armbandnumber/{armband} 
+                    (exercised by 4 tests)
+            
             get /api/v1/sites/{sitecode}/patient/doesmrnexist/{mrn} 
-                    (exercised by 1 tests)
+                    (exercised by 4 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/enterprisenumberalreadyexists/{enterprisenumber} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/ethnicities 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/financialclasses 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/genders 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/icdcode/{icdcode} 
+                    (exercised by 5 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/icdcodes 
+                    (exercised by 4 tests)
             
             get /api/v1/sites/{sitecode}/patient/instructions 
                     (exercised by 3 tests)
             
+            get /api/v1/sites/{sitecode}/patient/interfacepatient/mrn/{mrn} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/interpretations 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/getlatestorderingphysician/{internaladmissionnumber} 
+                    (exercised by 5 tests)
+            
+            get /api/v1/sites/{sitecode}/locations 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/demographicreview/getnotificationcount 
+                    (exercised by 23 tests)
+            
+            get /api/v1/sites/{sitecode}/demographicreview/getnotifications 
+                    (exercised by 15 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/orderstatuscodes 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/patientantibodies/{internalpatientnumber} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/patientantigens/{internalpatientnumber} 
+                    (exercised by 4 tests)
+            
             get /api/v1/sites/{sitecode}/patient/patient/{internalpatientnumber} 
                     (exercised by 1 tests)
             
+            get /api/v1/sites/{sitecode}/patient/patientinstructions/{internalpatientnumber} 
+                    (exercised by 4 tests)
+            
             get /api/v1/sites/{sitecode}/patient/getpatientmedicalrecord/{mrn} 
                     (exercised by 4 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/patientorders 
+                    (exercised by 4 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/patientprotocols 
+                    (exercised by 3 tests)
             
             get /api/v1/sites/{sitecode}/patient/patientsearch 
                     (exercised by 1 tests)
@@ -77,19 +173,78 @@
             get /api/v1/sites/{sitecode}/patient/sources 
                     (exercised by 3 tests)
             
+            get /api/v1/sites/{sitecode}/patient/patientspecimenssearch 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/patient/patientspecimens/{internalpatientnumber} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/prioritycodes 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/races 
+                    (exercised by 3 tests)
+            
             get /api/v1/sites/{sitecode}/patient/reactions 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/rooms/{location} 
+                    (exercised by 6 tests)
+            
+            get /api/v1/sites/{sitecode}/configuration/servicecodes 
                     (exercised by 3 tests)
             
             get /api/v1/sites/{sitecode}/patient/sextypes 
                     (exercised by 3 tests)
             
-            post /api/v1/sites/{sitecode}/patient/save 
-                    (exercised by 1 tests)
+            get /api/v1/sites/{sitecode}/demographicreview/hasacceptrejectpermission 
+                    (exercised by 3 tests)
             
-    ---------------------------------- Flux.WST.AntigenTesting.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 21.2%
+            post /api/v1/sites/{sitecode}/demographicreview/accept 
+                    (exercised by 3 tests)
+            
+            post /api/v1/sites/{sitecode}/demographicreview/reject 
+                    (exercised by 3 tests)
+            
+            post /api/v1/sites/{sitecode}/patient/save 
+                    (exercised by 4 tests)
+            
+    Endpoints-Operations Not Covered:
+            post /api/v1/sites/{sitecode}/exceptioncapturedata/save
+            get /api/v1/sites/{sitecode}/patient/patients
+            get /api/v1/sites/{sitecode}/patient/patient/ignoremergeunmergefilter/{internalpatientnumber}
+            get /api/v1/sites/{sitecode}/patient/patient/ignoremergeunmergefilter/mrn/{mrn}
+            get /api/v1/sites/{sitecode}/patient/patient/ignoremergeunmergefilter/armband/{armbandnumber}/mrn/{mrn}
+            get /api/v1/sites/{sitecode}/patient/patient/mrn/{mrn}
+            get /api/v1/sites/{sitecode}/patient/patient/armband/{armbandnumber}/mrn/{mrn}
+            get /api/v1/sites/{sitecode}/patient/getunknownpatient
+            get /api/v1/sites/{sitecode}/patient/getunknownpatient/mrn/{mrn}
+            post /api/v1/sites/{sitecode}/patient/search
+            get /api/v1/sites/{sitecode}/patient/getspecimenpatient/{specimencode}
+            get /api/v1/sites/{sitecode}/patient/patientdemographic/{patientsitecode}/{internalpatientnumber}
+            get /api/v1/sites/{sitecode}/patient/patientcomments/{internalcommentidnumber}
+            get /api/v1/sites/{sitecode}/patientadmissions/{internaladmissionnumber}
+            get /api/v1/sites/{sitecode}/patientadmissions/forpatient/{internalpatientnumber}
+            get /api/v1/sites/{sitecode}/patientadmissions/interfaceadmissions/forpatient/{mrn}
+            post /api/v1/sites/{sitecode}/patientadmissions
+            put /api/v1/sites/{sitecode}/patientadmissions
+            post /api/v1/sites/{sitecode}/patientadmissions/createpatientadmissionfrominterfacerequest
+            get /api/v1/sites/{sitecode}/patientadmissions/patientadmissionssearch
+            get /api/v1/sites/{sitecode}/patientadmissions/admittingphysician/{physiciansitecode}/{internalphysiciannumber}
+            get /api/v1/sites/{sitecode}/patientadmissions/physicianbyname
+            get /api/v1/sites/{sitecode}/patientadmissions/clientids
+            post /api/v1/sites/{sitecode}/patientadmissions/savepatientadmissioninstructions
+            post /api/v1/sites/{sitecode}/registrations/savepatientregistry
+            get /api/v1/sites/{sitecode}/registrations/patients/{internalpatientnumber}
+            post /api/v1/sites/{sitecode}/registrations/patients/search
+            get /api/v1/sites/{sitecode}/registrations/getadditionalpatientinformation/{internalpatientnumber}
+            get /api/v1/sites/{sitecode}/registrations/patients/{internalpatientnumber}/patientregisteredbyfacility
+    ---------------------------------- Flux.WST.AntigenTesting.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 33
+    Endpoints-Operations Exercised By Tests: 22
+    Coverage Percentage: 66.7%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
             post /api/v1/sites/{sitecode}/antigentesting/completecontrolworksheet 
                     (exercised by 4 tests)
@@ -97,11 +252,53 @@
             post /api/v1/sites/{sitecode}/antigentesting/completetestingworksheet 
                     (exercised by 2 tests)
             
+            get /api/v1/sites/{sitecode}/antigentesting/getantigens 
+                    (exercised by 26 tests)
+            
             get /api/v1/sites/{sitecode}/antigentesting/getcontrolworksheet/{controlworksheetid} 
                     (exercised by 4 tests)
             
+            get /api/v1/sites/{sitecode}/antigentesting/getexpirationdate 
+                    (exercised by 16 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getinstrumentnumbers 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getinterfacetestings 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getinterpretations 
+                    (exercised by 18 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getinvalidmatchoverridereasons 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getlotnumbers 
+                    (exercised by 16 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getobservationsbycode 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getpatientantigentestcodes/{internalpatientnumber} 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getprinters 
+                    (exercised by 18 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getqcsetnumbers/{internaltestnumber} 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getreagents 
+                    (exercised by 18 tests)
+            
             get /api/v1/sites/{sitecode}/antigentesting/gettestingworksheet/{worksheetid} 
                     (exercised by 8 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getunitantigentestcodes/{internalunitnumber} 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/antigentesting/getvialnumbers 
+                    (exercised by 16 tests)
             
             post /api/v1/sites/{sitecode}/antigentesting/savecontrolworksheet 
                     (exercised by 2 tests)
@@ -109,62 +306,215 @@
             post /api/v1/sites/{sitecode}/antigentesting/savetestingworksheet 
                     (exercised by 4 tests)
             
+            get /api/v1/sites/{sitecode}/antigentesting/searchforworksheets 
+                    (exercised by 3 tests)
+            
             post /api/v1/sites/{sitecode}/antigentesting/validategradedreactions 
                     (exercised by 25 tests)
             
-    ---------------------------------- Flux.WST.Inventory.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 16.4%
+    Endpoints-Operations Not Covered:
+            post /api/v1/sites/{sitecode}/antigentesting/savecompletecontrolworksheetchanges
+            delete /api/v1/sites/{sitecode}/antigentesting/deleteworksheet/{worksheetid}/{worksheettype}
+            get /api/v1/sites/{sitecode}/antigentesting/getinstrumenttestingsavailability
+            get /api/v1/sites/{sitecode}/antigentesting/getinstrumenttestings
+            post /api/v1/sites/{sitecode}/antigentesting/savecompletetestingworksheetchanges
+            post /api/v1/sites/{sitecode}/antigentesting/invalidatetesting
+            post /api/v1/sites/{sitecode}/antigentesting/evaluatetestingsexceptions
+            get /api/v1/sites/{sitecode}/antigentesting/getcomments/{commentid}
+            get /api/v1/sites/{sitecode}/antigentesting/getunitlabelprintdata
+            get /api/v1/sites/{sitecode}/antigentesting/gethardcodedcomments
+    ---------------------------------- Flux.WST.Inventory.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 68
+    Endpoints-Operations Exercised By Tests: 34
+    Coverage Percentage: 50.0%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
-            patch /api/v1/facilities/{facilitycode}/product-type/{producttype}/dereserve/{numberofdays} 
+            get /api/v1/comment/gethardcodedcomments 
                     (exercised by 4 tests)
             
-            get /api/v1/{facilitycode}/batches 
-                    (exercised by 3 tests)
-            
-            get /api/v1/{facilitycode}/batches/{batchid}/units 
-                    (exercised by 4 tests)
-            
-            get /api/v1/device/virtualidentifiers/facilities/{facility} 
-                    (exercised by 4 tests)
-            
-            get /api/v1/issuelocations/facilities/{facility} 
-                    (exercised by 3 tests)
-            
-            get /api/v1/units/facilities/{facility}/units/{donationid}/productcodes/{productcode}/antibodies 
-                    (exercised by 3 tests)
-            
-            get /api/v1/units/facilities/{facility}/units/{donationid}/productcodes/{productcode}/antigens 
-                    (exercised by 3 tests)
-            
-            get /api/v1/units/facilities/{facility}/units/{donationid}/productcodes/{productcode}/attributes 
-                    (exercised by 3 tests)
-            
-            get /api/v1/units/facilities/{facility}/units/{donationid}/productcodes/{productcode} 
+            get /api/v1/comment/getsupervisorcommentpermission 
                     (exercised by 6 tests)
             
-            post /api/v1/product/facilities/{facility}/addissueunittorequest 
+            patch /api/v1/facilities/{sitecode}/product-type/{producttype}/dereserve/{numberofdays} 
+                    (exercised by 4 tests)
+            
+            post /api/v1/facilities/{sitecode}/emergencyrequests/{issuerequestguid}/units 
+                    (exercised by 12 tests)
+            
+            post /api/v1/facilities/{sitecode}/emergencyrequests/{issuerequestguid}/units/{issueunitguid}/safetycheckoverride 
+                    (exercised by 5 tests)
+            
+            delete /api/v1/facilities/{sitecode}/emergencyrequests/{issuerequestguid}/units/{issueunitguid} 
+                    (exercised by 3 tests)
+            
+            put /api/v1/facilities/{sitecode}/emergencyrequests/{issuerequestguid}/units/{issueunitguid} 
+                    (exercised by 1 tests)
+            
+            post /api/v1/facilities/{sitecode}/emergencyrequests/{issuerequestguid}/preparetransfusionslips 
+                    (exercised by 6 tests)
+            
+            post /api/v1/facilities/{sitecode}/emergencyrequests/{issuerequestguid}/confirmunits 
+                    (exercised by 8 tests)
+            
+            post /api/v1/facilities/{sitecode}/emergencyrequests/{issuerequestguid}/emergencyissue 
+                    (exercised by 6 tests)
+            
+            get /api/v1/facilities/{sitecode}/emergencyrequests/{issuerequestguid} 
+                    (exercised by 3 tests)
+            
+            post /api/v1/facilities/{sitecode}/emergencyrequests/{issuerequestguid} 
                     (exercised by 2 tests)
             
-            put /api/v1/device/virtualidentifiers/facilities/{facility}/devices/{device}/identifiers/{identifier} 
+            post /api/v1/facilities/{sitecode}/emergencyrequests/{issuerequestguid}/kits/{kitnumber} 
+                    (exercised by 1 tests)
+            
+            post /api/v1/unit-events/save 
+                    (exercised by 5 tests)
+            
+            post /api/v1/unit-exceptions/save 
+                    (exercised by 7 tests)
+            
+            get /api/v1/{sitecode}/batches 
                     (exercised by 3 tests)
             
-    ---------------------------------- Flux.WST.BloodTrack.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 9.1%
+            get /api/v1/{sitecode}/batches/{batchid}/units 
+                    (exercised by 4 tests)
+            
+            get /api/v1/device/virtualidentifiers/facilities/{sitecode} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/facilities/{sitecode}/issuelocations 
+                    (exercised by 3 tests)
+            
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/productcodes/{productcode}/antibodies 
+                    (exercised by 3 tests)
+            
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/productcodes/{productcode}/antigens 
+                    (exercised by 3 tests)
+            
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/productcodes/{productcode}/attributes 
+                    (exercised by 3 tests)
+            
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/productcodes/{productcode} 
+                    (exercised by 6 tests)
+            
+            get /api/v1/facilities/{sitecode}/kits/{kitnumber}/unit/{internalunitnumber}/validateunitscan 
+                    (exercised by 2 tests)
+            
+            get /api/v1/facilities/{sitecode}/kits/{kitnumber} 
+                    (exercised by 4 tests)
+            
+            delete /api/v1/facilities/{sitecode}/kits/{kitnumber} 
+                    (exercised by 2 tests)
+            
+            get /api/v1/facilities/{sitecode}/kits/{kitnumber}/discrepancies 
+                    (exercised by 4 tests)
+            
+            get /api/v1/facilities/{sitecode}/kits 
+                    (exercised by 4 tests)
+            
+            post /api/v1/facilities/{sitecode}/kits 
+                    (exercised by 24 tests)
+            
+            get /api/v1/facilities/{sitecode}/productcodes 
+                    (exercised by 5 tests)
+            
+            get /api/v1/facilities/{sitecode}/producttypes 
+                    (exercised by 5 tests)
+            
+            put /api/v1/device/virtualidentifiers/facilities/{sitecode}/devices/{device}/identifiers/{identifier} 
+                    (exercised by 3 tests)
+            
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/productcodes/{productcode}/unithistory 
+                    (exercised by 7 tests)
+            
+            get /api/v1/facilities/{sitecode}/unitstatuses 
+                    (exercised by 5 tests)
+            
+    Endpoints-Operations Not Covered:
+            post /api/v1/bloodtrack/stockmovement/sites/{sitecode}
+            get /api/v1/sites/{sitecode}/configuration/emergencyissuecompatibilitymatricies
+            post /api/v1/sites/{sitecode}/configuration/saveemergencyissuecompatibilitymatricies
+            get /api/v1/derivatives/facilities/{sitecode}/lots/{lot}/sublots/{sublot}/derivativecodes/{derivativecode}
+            put /api/v1/derivatives/savederivative
+            post /api/v1/derivatives/issueforstockmovement
+            post /api/v1/derivatives/updatelocationforstockmovement
+            put /api/v1/derivatives/issueforstocktransfer/facilities/{sitecode}/lots/{lot}/sublots/{sublot}/derivatives/{derivativecode}
+            post /api/v1/derivatives/bloodtrack/stockmovement
+            post /api/v1/derivatives/bloodtrack/stocktransfer
+            post /api/v1/derivatives/issueforreturntostock
+            post /api/v1/derivatives/issueforfateofunit
+            post /api/v1/devices/derivatives/facilities/{sitecode}/lots/{lot}/sublots/{sublot}/removefromstorage
+            post /api/v1/devices/derivatives/assignidentifiertostorage
+            get /api/v1/derivatives/devices/devicesearch/facilities/{sitecode}/derivativedevices/{device}
+            get /api/v1/derivatives/devices/validatedevicemaster/derivativedevices/{device}
+            post /api/v1/moveauxiliarystock
+            get /api/v1/facilities/{sitecode}/emergencyrequests/{issuerequestguid}/pendingsafetychecks
+            get /api/v1/sites/{sitecode}/orphanproduct/existorphanproductsbypatient
+            post /api/v1/units/saveantibodiesforunit
+            post /api/v1/units/saveantigensforunit
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/productcodes/{productcode}/donationtypes/{donationtype}/divisions/{division}/unithistory
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/unithistory
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/productcodes/{productcode}/donationtypes/{donationtype}/divisions/{division}/attributes
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/attributes
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/productcodes/{productcode}/donationtypes/{donationtype}/divisions/{division}/antibodies
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/antibodies
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/productcodes/{productcode}/donationtypes/{donationtype}/divisions/{division}/antigens
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/antigens
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}/productcodes/{productcode}/donationtypes/{donationtype}/divisions/{division}
+            get /api/v1/units/facilities/{sitecode}/units/{donationid}
+            post /api/v1/units/issueforstockmovement
+            post /api/v1/units/issueforstockmovementfortransfusion
+            post /api/v1/units/issueforstockmovementforadministrativereason
+    ---------------------------------- Flux.WST.BloodTrack.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 22
+    Endpoints-Operations Exercised By Tests: 6
+    Coverage Percentage: 27.3%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
-            get /api/v1/reservestock/v6/facilities/{facilitycode} 
+            get /api/v1/reservestock/v6/facilities/{sitecode} 
                     (exercised by 3 tests)
             
-            get /api/v1/stockupdate/v4/facilities/{facilitycode} 
+            get /api/v1/stockupdate/v0/facilities/{sitecode} 
                     (exercised by 3 tests)
             
-    ---------------------------------- Flux.WST.Orders.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 8.1%
+            get /api/v1/stockupdate/v1/facilities/{sitecode} 
+                    (exercised by 3 tests)
+            
+            get /api/v1/stockupdate/v2/facilities/{sitecode} 
+                    (exercised by 3 tests)
+            
+            get /api/v1/stockupdate/v3/facilities/{sitecode} 
+                    (exercised by 3 tests)
+            
+            get /api/v1/stockupdate/v4/facilities/{sitecode} 
+                    (exercised by 3 tests)
+            
+    Endpoints-Operations Not Covered:
+            post /api/v1/fateofunit/facilities/{sitecode}
+            post /api/v1/remoteallocationeligibility/facilities/{sitecode}/{crossmatchqueryresponseid}/ack
+            get /api/v1/remoteallocationeligibility/facilities/{sitecode}
+            post /api/v1/reservestockacknowledgement/facilities/{sitecode}/{acknowledgementid}/ack
+            get /api/v1/reservestock/v0/facilities/{sitecode}
+            get /api/v1/reservestock/v1/facilities/{sitecode}
+            get /api/v1/reservestock/v2/facilities/{sitecode}
+            get /api/v1/reservestock/v3/facilities/{sitecode}
+            get /api/v1/reservestock/v4/facilities/{sitecode}
+            get /api/v1/reservestock/v5/facilities/{sitecode}
+            post /api/v1/returntostock/facilities/{sitecode}
+            post /api/v1/stockmovement/facilities/{sitecode}
+            post /api/v1/stockmovementacknowledgement/facilities/{sitecode}/{acknowledgementid}/ack
+            post /api/v1/stocktransfer/facilities/{sitecode}
+            post /api/v1/addstockupdate
+            post /api/v1/stockupdateacknowledgement/facilities/{sitecode}/{acknowledgementid}/ack
+    ---------------------------------- Flux.WST.Orders.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 38
+    Endpoints-Operations Exercised By Tests: 6
+    Coverage Percentage: 15.8%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
             get /api/v1/sites/{sitecode}/issue/getissuelocations 
                     (exercised by 2 tests)
@@ -172,42 +522,140 @@
             get /api/v1/sites/{sitecode}/order/clinicians 
                     (exercised by 2 tests)
             
+            get /api/v1/sites/{sitecode}/order/createuniqueordernumber 
+                    (exercised by 2 tests)
+            
+            get /api/v1/sites/{sitecode}/order/ordermessagedetail/{internalordermessagenumber} 
+                    (exercised by 8 tests)
+            
+            post /api/v1/sites/{sitecode}/order/createemergencyissueorder 
+                    (exercised by 7 tests)
+            
             post /api/v1/sites/{sitecode}/safetycheck/evaluatesafetychecks 
                     (exercised by 46 tests)
             
-    ---------------------------------- Flux.WST.Administration.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 6.2%
+    Endpoints-Operations Not Covered:
+            post /api/v1/sites/{sitecode}/issue/addworkflow/{internalordernumber}
+            delete /api/v1/sites/{sitecode}/issue/removeworkflow/{worksheetid}
+            get /api/v1/sites/{sitecode}/issue/getallworkflows/{internalordernumber}
+            get /api/v1/sites/{sitecode}/issue/getworkflow/{worksheetid}
+            get /api/v1/sites/{sitecode}/issue/getissueunit
+            post /api/v1/sites/{sitecode}/issue/completeissue
+            post /api/v1/sites/{sitecode}/issue/completeconfirmationscan
+            post /api/v1/sites/{sitecode}/issue/quarantineunit
+            get /api/v1/sites/{sitecode}/issue/getissueunitsslippdf/{worksheetid}
+            get /api/v1/sites/{sitecode}/order/requesttypes
+            get /api/v1/sites/{sitecode}/order/statuscodes
+            post /api/v1/sites/{sitecode}/order/save
+            get /api/v1/sites/{sitecode}/order/getpatientorders/{internalpatientnumber}
+            get /api/v1/sites/{sitecode}/order/master/{internalordermessagenumber}
+            get /api/v1/sites/{sitecode}/safetycheck/overridereasons
+            post /api/v1/sites/{sitecode}/testspecimen/addworkflow/{internalordernumber}
+            delete /api/v1/sites/{sitecode}/testspecimen/removeworkflow/{worksheetid}
+            get /api/v1/sites/{sitecode}/testspecimen/getallworkflows/{internalordernumber}
+            get /api/v1/sites/{sitecode}/testspecimen/gettesttypes
+            get /api/v1/sites/{sitecode}/testspecimen/getobservations
+            get /api/v1/sites/{sitecode}/testspecimen/getrh
+            get /api/v1/sites/{sitecode}/testspecimen/getinterpretation
+            get /api/v1/sites/{sitecode}/testspecimen/getworkflow/{worksheetid}
+            post /api/v1/sites/{sitecode}/testspecimen/save
+            post /api/v1/sites/{sitecode}/testspecimen/complete
+            get /api/v1/sites/{sitecode}/testspecimen/getantibodies
+            get /api/v1/sites/{sitecode}/testspecimen/getantigens
+            get /api/v1/sites/{sitecode}/testspecimen/interpretationcodes
+            get /api/v1/sites/{sitecode}/testspecimen/testspecimenunitobservationcodes
+            get /api/v1/sites/{sitecode}/testspecimen/testspecimenunitinterpretationcodes
+            get /api/v1/sites/{sitecode}/testspecimen/testspecimentestresultcodes
+    ---------------------------------- Flux.WST.Administration.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 16
+    Endpoints-Operations Exercised By Tests: 4
+    Coverage Percentage: 25.0%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
+            get /api/v1/timezone/allsystemtimezones 
+                    (exercised by 2 tests)
+            
+            get /api/v1/timezone/facilitytimezones 
+                    (exercised by 2 tests)
+            
+            put /api/v1/timezone 
+                    (exercised by 4 tests)
+            
             get /api/v1/usermanagement/getuser 
                     (exercised by 4 tests)
             
-    ---------------------------------- Flux.WST.Interface.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 100.0%
+    Endpoints-Operations Not Covered:
+            get /api/v1/applications/all
+            get /api/v1/facilities/all
+            get /api/v1/features/all
+            get /api/v1/roles/all
+            get /api/v1/systemvalues/changereasons/facilitycode/{sitecode}
+            get /api/v1/usermanagement/techidexists
+            get /api/v1/usermanagement/techidiseditable
+    ---------------------------------- Flux.WST.Interface.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 1
+    Endpoints-Operations Exercised By Tests: 1
+    Coverage Percentage: 100.0%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
             post /api/v1/inboundmessage/sendtestresults 
-                    (exercised by 1 tests)
+                    (exercised by 6 tests)
             
-    ---------------------------------- Flux.WST.Home.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 20.0%
+    Endpoints-Operations Not Covered:
+    ---------------------------------- Flux.WST.Home.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 10
+    Endpoints-Operations Exercised By Tests: 10
+    Coverage Percentage: 100.0%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
+            get /api/v1/applicationinformation/transfusionversion 
+                    (exercised by 2 tests)
+            
             get /api/v1/applications/all 
+                    (exercised by 2 tests)
+            
+            get /api/v1/configuration/getkeycloaksettings 
+                    (exercised by 2 tests)
+            
+            get /api/v1/configuration/getlegacynavigationenabled 
+                    (exercised by 2 tests)
+            
+            get /api/v1/configuration/getoktasettings 
+                    (exercised by 2 tests)
+            
+            get /api/v1/configuration/getscanditlicensekey 
+                    (exercised by 2 tests)
+            
+            get /api/v1/configuration/geturls/{applicationname}/{urlrequesttype} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/configuration/getauthenticationprovidertype 
+                    (exercised by 2 tests)
+            
+            get /api/v1/sidenavlinks/all 
                     (exercised by 2 tests)
             
             get /api/v1/sidenavlinks/sidenavigationsettings 
                     (exercised by 2 tests)
             
-    ---------------------------------- Flux.WSB.TenantProfileService / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 75.0%
+    Endpoints-Operations Not Covered:
+    ---------------------------------- Flux.WSB.TenantProfileService / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 8
+    Endpoints-Operations Exercised By Tests: 8
+    Coverage Percentage: 100.0%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
-            get /api/v1/sites/{sitecode}/facilitysettings/ 
+            get /api/v1/tenantsites/sites/{sitecode}/activefacilities 
+                    (exercised by 3 tests)
+            
+            get /api/v1/tenantsites/sites/{sitecode}/facilitiessharingpatients 
+                    (exercised by 3 tests)
+            
+            get /api/v1/sites/{sitecode}/facilitysettings 
                     (exercised by 3 tests)
             
             get /api/v1/sites/{sitecode}/facilitysettings/getdefaultvalue/{category} 
@@ -216,31 +664,59 @@
             get /api/v1/tenantsites/gettestsites 
                     (exercised by 2 tests)
             
-            get /api/v1/tenantsites/sites/{sitecode}/subscribingfacilities/ 
+            get /api/v1/tenantsites/sites/{sitecode}/subscribingfacilities 
                     (exercised by 3 tests)
             
-            get /api/v1/tenantsites/gettenantsites/ 
+            get /api/v1/tenantsites/gettenantsites 
                     (exercised by 2 tests)
             
-            get /api/v1/tenantsites/gettestfamiliestenantsites/ 
+            get /api/v1/tenantsites/gettestfamiliestenantsites 
                     (exercised by 2 tests)
             
-    ---------------------------------- Flux.WSB.Auditing.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 16.7%
+    Endpoints-Operations Not Covered:
+    ---------------------------------- Flux.WSB.Auditing.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 12
+    Endpoints-Operations Exercised By Tests: 5
+    Coverage Percentage: 41.7%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
             post /api/v1/auditpatientview/sites/{sitecode}/insertviewauditlog 
-                    (exercised by 4 tests)
+                    (exercised by 5 tests)
             
             get /api/v1/authenticationlogging/sites/{sitecode}/startauthenticationlogging 
+                    (exercised by 5 tests)
+            
+            get /api/v1/authenticationlogging/sites/{sitecode}/stopauthenticationlogging/{internalsessionid}/{previousfacility} 
+                    (exercised by 5 tests)
+            
+            get /api/v1/auditpatientview/sites/{sitecode}/updateviewauditlog/{auditlogid} 
+                    (exercised by 6 tests)
+            
+            get /api/v1/authenticationlogging/sites/{sitecode}/updateauthenticationlogging/{internalsessionid} 
+                    (exercised by 7 tests)
+            
+    Endpoints-Operations Not Covered:
+            get /api/v1/applications/all
+            get /api/v1/sites/{sitecode}/eventlog/searchforeventlogs
+            get /api/v1/sites/{sitecode}/exception/current
+            get /api/v1/sites/{sitecode}/exception/completed
+            get /api/v1/sites/{sitecode}/exception/getcomments
+            post /api/v1/sites/{sitecode}/exception/savecomments
+            post /api/v1/sites/{sitecode}/exception/completeexception
+    ---------------------------------- Flux.WS.Barcode.ISBTService / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 16
+    Endpoints-Operations Exercised By Tests: 12
+    Coverage Percentage: 75.0%
+
+    Endpoints-Operations Covered:
+    
+            get /api/v1/isbtbarcode/productcode/defaultdonationtypeanddivision 
+                    (exercised by 1 tests)
+            
+            get /api/v1/isbtbarcode/sites/{sitecode}/getbloodtypes 
                     (exercised by 3 tests)
             
-    ---------------------------------- Flux.WS.Barcode.ISBTService / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 50.0%
-
-    Endpoints Covered:
-    
             get /api/v1/isbtbarcode/collectiondatetime/{collectiondatetime} 
                     (exercised by 5 tests)
             
@@ -259,16 +735,29 @@
             post /api/v1/isbtbarcode/expirationdatetimeplus 
                     (exercised by 9 tests)
             
+            post /api/v1/isbtbarcode/expirationdatetime 
+                    (exercised by 6 tests)
+            
             post /api/v1/isbtbarcode/productcode 
                     (exercised by 8 tests)
+            
+            post /api/v1/isbtbarcode/sites/{sitecode}/specialattribute 
+                    (exercised by 5 tests)
             
             post /api/v1/safetycheck/sites/{sitecode}/evaluatesafetychecks 
                     (exercised by 45 tests)
             
-    ---------------------------------- Flux.ProcessMigration.API / 05/31/23 ----------------------------------
-    Endpoints Coverage Percentage: 42.9%
+    Endpoints-Operations Not Covered:
+            post /api/v1/isbtbarcode/delimiterdetails
+            post /api/v1/isbtbarcode/sites/{sitecode}/barcodes
+            post /api/v1/isbtbarcode/productcodes
+            post /api/v1/isbtbarcode/datamatrixdetails
+    ---------------------------------- Flux.ProcessMigration.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 7
+    Endpoints-Operations Exercised By Tests: 3
+    Coverage Percentage: 42.9%
 
-    Endpoints Covered:
+    Endpoints-Operations Covered:
     
             post /api/v1/processhl7adtinboundmessage 
                     (exercised by 4 tests)
@@ -279,3 +768,49 @@
             post /api/v1/processhl7orminboundmessage 
                     (exercised by 3 tests)
             
+    Endpoints-Operations Not Covered:
+            post /api/v1/electroniccrossmatch
+            post /api/v1/remoteallocationeligibilityquery
+            post /api/v1/processaddsexagereleatedpi
+            post /api/v1/patientidentityquery
+    ---------------------------------- Flux.WST.TestFamilies.API / 09/26/23 ----------------------------------
+    Endpoints-Operations In API: 19
+    Endpoints-Operations Exercised By Tests: 7
+    Coverage Percentage: 36.8%
+
+    Endpoints-Operations Covered:
+    
+            get /api/v1/header/getheaders/{sitecode}/{configuration}/{xmvalue} 
+                    (exercised by 6 tests)
+            
+            get /api/v1/testfamily/gettestfamilies 
+                    (exercised by 2 tests)
+            
+            get /api/v1/mask/getmaskheaders/{sitecode}/{testfamily}/{configuration}/{xmvalue} 
+                    (exercised by 8 tests)
+            
+            get /api/v1/mask/getmaskitems/{sitecode}/{testfamily}/{configuration} 
+                    (exercised by 9 tests)
+            
+            get /api/v1/mask/getmasktests/{sitecode}/{testfamily} 
+                    (exercised by 4 tests)
+            
+            get /api/v1/truthtable/gettruthtableheaders/{sitecode}/{configuration}/{specialcode}/{xmvalue} 
+                    (exercised by 17 tests)
+            
+            get /api/v1/truthtable/gettruthtableitems/{sitecode}/{testfamily}/{configuration}/{specialcode}/{xmvalue} 
+                    (exercised by 20 tests)
+            
+    Endpoints-Operations Not Covered:
+            get /api/v1/authorization/canedit/{sitecode}
+            get /api/v1/configuration/getconfigurations/{sitecode}/{testfamily}/{xmvalue}
+            post /api/v1/configuration/saveconfiguration
+            patch /api/v1/configuration/inactivateconfiguration/{sitecode}/{configuration}
+            post /api/v1/header/saveheader
+            get /api/v1/header/getlastheaders/{sitecode}/{testfamily}/{configuration}/{xmvalue}
+            get /api/v1/mask/getmasklastitems/{sitecode}/{testfamily}/{configuration}
+            post /api/v1/mask/savemask
+            get /api/v1/testfamily/checkheaders/{sitecode}/{configuration}
+            get /api/v1/truthtable/gettruthtablelastitems/{sitecode}/{testfamily}/{configuration}/{specialcode}/{xmvalue}
+            post /api/v1/truthtable/savetruthtable
+            get /api/v1/truthtable/getinterpfieldvalues/{sitecode}/{testfamily}

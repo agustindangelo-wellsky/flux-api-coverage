@@ -101,9 +101,10 @@ def get_flux_api_methods_and_interfaces(interfaces_file_paths):
 
         for i, line in enumerate(lines):
             if re.search('\[Post|\[Get|\[Put|\[Patch|\[Delete', line):
-                interfaces.append(line)
-                method = re.search('\w*\(', lines[i+1]).group(0)[:-1]
-                flux_api_methods.append(method)
+                if not line.lstrip().startswith('//'): # skip commented-out lines
+                    interfaces.append(line)
+                    method = re.search('\w*\(', lines[i+1]).group(0)[:-1]
+                    flux_api_methods.append(method)
 
     return flux_api_methods, interfaces
 
